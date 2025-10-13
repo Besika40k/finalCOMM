@@ -1,0 +1,52 @@
+﻿[
+  {
+    "CardNumber": "1234567890123456",
+    "CVC": "123",
+    "ExpirationDate": "12/27",
+    "PIN": "4321",
+    "Balance": {
+      "GEL": 1000.50,
+      "USD": 300.00,
+      "EUR": 150.00
+    },
+    "Transactions": [
+      {
+        "Date": "2025-10-13T15:00:00",
+        "Type": "Deposit",
+        "Amount": 200,
+        "Currency": "USD"
+      },
+      {
+        "Date": "2025-10-12T11:30:00",
+        "Type": "Withdraw",
+        "Amount": 50,
+        "Currency": "GEL"
+      }
+    ]
+  },
+  {
+    "CardNumber": "9876543210987654",
+    "CVC": "456",
+    "ExpirationDate": "06/26",
+    "PIN": "9876",
+    "Balance": {
+      "GEL": 500.00,
+      "USD": 1200.00,
+      "EUR": 300.00
+    },
+    "Transactions": [
+      {
+        "Date": "2025-10-10T09:45:00",
+        "Type": "Deposit",
+        "Amount": 500,
+        "Currency": "USD"
+      },
+      {
+        "Date": "2025-10-11T14:20:00",
+        "Type": "Withdraw",
+        "Amount": 100,
+        "Currency": "EUR"
+      }
+    ]
+  }
+]
