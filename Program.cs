@@ -1,75 +1,78 @@
-﻿using System.Text.Json;
+﻿using System;
 using NLog;
 using finalCOMM.MainClasses;
+using finalCOMM.Actions;
 
 namespace finalCOMM
 {
     internal class Program
     {
         // NLog Logger
-        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
-
-        // Path to JSON file
-        private const string UserDataFile = "Database/users.json";
-
-        // List of users loaded from JSON
-        private static List<User> users = new();
+        /*
+         * private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+         */
+        private static readonly Logger logger = LogManager.Setup().LoadConfigurationFromFile("NLog.config").GetCurrentClassLogger();
 
         static void Main(string[] args)
         {
             try
             {
+
+                logger.Info("ATM Simulator started");
+
                 Console.WriteLine("=== Welcome to the ATM Simulator ===");
 
-                // Load user data
-                LoadUsers();
+                // Path to JSON file
+                string jsonPath = "Database/users.json";
 
-                // Main program loop
+                // Initialize JSON helper and load users
+                var jsonActions = new JsonActions(jsonPath);
+
+                // Initialize account actions
+                var accountAction = new AccountAction(jsonActions);
+                
+                // Starting the logging
+                
                 while (true)
                 {
                     Console.WriteLine("\nPlease insert your card (enter card number): ");
-                    string cardNumber = Console.ReadLine();
+                    string? cardNumber = Console.ReadLine();
 
-                    User currentUser = AuthenticateUser(cardNumber);
+                    if (string.IsNullOrWhiteSpace(cardNumber))
+                    {
+                        Console.WriteLine("Card number cannot be empty.");
+                        continue;
+                    }
+
+                    User? currentUser = AuthenticateUser(cardNumber, jsonActions);
+
                     if (currentUser != null)
                     {
-                        Console.WriteLine("Login successful!");
+                        Console.WriteLine("✅ Login successful!");
                         logger.Info($"User {cardNumber} logged in.");
-                        ShowMenu(currentUser);
+                        ShowMenu(currentUser, accountAction);
                     }
                     else
                     {
-                        Console.WriteLine("Invalid card number. Try again.");
+                        Console.WriteLine("❌ Invalid card number. Try again.");
                         logger.Warn($"Failed login attempt with card {cardNumber}");
                     }
                 }
             }
-            catch (FileNotFoundException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("User data file not found!");
-                logger.Error(ex, "users.json file missing");
+                Console.WriteLine("Unexpected error occurred. Exiting.");
+                logger.Error(ex, "Fatal error in Main");
             }
-            catch (JsonException ex)
-            {
-                Console.WriteLine("Error parsing user data!");
-                logger.Error(ex, "JSON parsing error");
-            }
-           
         }
 
-        private static void LoadUsers()
+        private static User? AuthenticateUser(string cardNumber, JsonActions jsonActions)
         {
-            string json = File.ReadAllText(UserDataFile);
-            users = JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+            // Look for a user with the given card number
+            return jsonActions.Users.Find(u => u.CardNumber == cardNumber);
         }
 
-        private static User AuthenticateUser(string cardNumber)
-        {
-            // Simple authentication: search by card number
-            return users.Find(u => u.CardNumber == cardNumber);
-        }
-
-        private static void ShowMenu(User user)
+        private static void ShowMenu(User user, AccountAction accountAction)
         {
             bool exit = false;
 
@@ -81,35 +84,56 @@ namespace finalCOMM
                 Console.WriteLine("3. Withdraw Money");
                 Console.WriteLine("4. Show Last 5 Transactions");
                 Console.WriteLine("5. Change PIN");
-                Console.WriteLine("6. Exit");
+                Console.WriteLine("6. Logout");
 
                 Console.Write("Enter choice: ");
-                string choice = Console.ReadLine();
+                string? choice = Console.ReadLine();
 
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("oh this thing ain't working yet");
+                        accountAction.CheckBalance(user);
                         break;
                     case "2":
-                        Console.WriteLine("oh this thing ain't working yet");
+                        accountAction.Deposit(user);
                         break;
                     case "3":
-                        Console.WriteLine("oh this thing ain't working yet");
+                        accountAction.Withdraw(user);
                         break;
                     case "4":
-                        Console.WriteLine("oh this thing ain't working yet");
+                        ShowTransactions(user);
                         break;
                     case "5":
-                        Console.WriteLine("oh this thing ain't working yet");
+                        accountAction.ChangePIN(user);
                         break;
                     case "6":
                         exit = true;
+                        Console.WriteLine("Logging out...");
                         break;
                     default:
                         Console.WriteLine("Invalid choice, try again.");
                         break;
                 }
+            }
+        }
+
+        private static void ShowTransactions(User user)
+        {
+            Console.WriteLine("\n📄 Last 5 Transactions:");
+            if (user.Transactions == null || user.Transactions.Count == 0)
+            {
+                Console.WriteLine("No transactions available.");
+                return;
+            }
+
+            // Show last 5 transactions (or fewer if less than 5)
+            var last5 = user.Transactions.Count <= 5
+                ? user.Transactions
+                : user.Transactions.GetRange(user.Transactions.Count - 5, 5);
+
+            foreach (var t in last5)
+            {
+                Console.WriteLine($"{t.Date:yyyy-MM-dd HH:mm} | {t.Type} | {t.Amount} {t.Currency}");
             }
         }
     }
