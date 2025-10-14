@@ -1,37 +1,53 @@
-2025-10-14 16:43:58.4473 | INFO | ATM Simulator started 
-2025-10-14 16:43:58.5359 | INFO | Users loaded successfully. 
-2025-10-14 16:44:01.8290 | WARN | Failed login attempt with card 2 
-2025-10-14 16:46:17.3505 | INFO | ATM Simulator started 
-2025-10-14 16:46:17.4322 | INFO | Users loaded successfully. 
-2025-10-14 16:46:18.8739 | INFO | User 1234567890123456 logged in. 
-2025-10-14 16:47:31.9819 | INFO | User data saved successfully. 
-2025-10-14 16:47:31.9819 | INFO | Deposited 200 GEL to card 1234567890123456 
-2025-10-14 16:50:29.2030 | INFO | User data saved successfully. 
-2025-10-14 16:50:29.2030 | INFO | Deposited 666 GEL to card 1234567890123456 
-2025-10-14 16:54:34.5851 | INFO | ATM Simulator started 
-2025-10-14 16:54:34.6739 | INFO | Users loaded successfully. 
-2025-10-14 16:54:37.6291 | WARN | Failed login attempt with card 1234567890123456\ 
-2025-10-14 16:54:39.3308 | INFO | User 1234567890123456 logged in. 
-2025-10-14 17:01:23.7334 | INFO | ATM Simulator started 
-2025-10-14 17:01:23.8152 | INFO | Users loaded successfully. 
-2025-10-14 17:01:28.1352 | INFO | User 1234567890123456 logged in. 
-2025-10-14 17:07:06.2925 | INFO | ATM Simulator started 
-2025-10-14 17:07:06.3904 | INFO | Users loaded successfully. 
-2025-10-14 17:07:14.8587 | WARN | Failed login attempt with card 2 
-2025-10-14 17:07:22.1746 | WARN | Failed login attempt with card 1234567890123456 
-2025-10-14 17:07:36.4738 | INFO | User 1234567890123456 logged in. 
-2025-10-14 17:07:43.2322 | WARN | Failed login attempt with card 1234567890123456 
-2025-10-14 17:08:20.5689 | INFO | ATM Simulator started 
-2025-10-14 17:08:20.6554 | INFO | Users loaded successfully. 
-2025-10-14 17:08:30.1997 | WARN | Failed login attempt with card 1234567890123456 
-2025-10-14 17:08:43.5059 | INFO | User 1234567890123456 logged in. 
-2025-10-14 17:13:45.3771 | INFO | ATM Simulator started 
-2025-10-14 17:13:45.4791 | INFO | Users loaded successfully. 
-2025-10-14 17:13:53.0484 | INFO | User 1234567890123456 logged in. 
-2025-10-14 17:13:59.4198 | INFO | User data saved successfully. 
-2025-10-14 17:13:59.4198 | INFO | Deposited 200 GEL to card 1234567890123456 
-2025-10-14 17:22:05.1145 | INFO | ATM Simulator started 
-2025-10-14 17:22:05.2025 | INFO | Users loaded successfully. 
-2025-10-14 17:22:14.0024 | INFO | User 1234567890123456 logged in. 
-2025-10-14 17:22:28.5021 | INFO | User data saved successfully. 
-2025-10-14 17:22:28.5021 | INFO | Deposited 200 GEL to card 1234567890123456 
+2025-10-14 17:39:51.5518 | INFO | ATM Simulator started 
+2025-10-14 17:39:51.6217 | INFO | Users loaded successfully. 
+2025-10-14 17:39:54.5070 | WARN | Failed login attempt with card aefsgrt 
+2025-10-14 17:40:24.8007 | WARN | Failed login attempt with card fesgdn 
+2025-10-14 17:47:18.9118 | INFO | ATM Simulator started 
+2025-10-14 17:47:18.9774 | INFO | Users loaded successfully. 
+2025-10-14 17:47:24.8394 | WARN | Failed login attempt with card awdfegrhtfegrtjykulyifukjshatewrtrtrkfjhghjsdatewR 
+2025-10-14 17:48:33.1912 | INFO | ATM Simulator started 
+2025-10-14 17:48:33.2563 | INFO | Users loaded successfully. 
+2025-10-14 17:48:42.2354 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:49:07.6295 | INFO | User data saved successfully. 
+2025-10-14 17:49:07.6295 | INFO | User 1234567890123456 changed PIN successfully. 
+2025-10-14 17:49:24.0087 | INFO | User data saved successfully. 
+2025-10-14 17:49:24.0087 | INFO | User 1234567890123456 changed PIN successfully. 
+2025-10-14 17:50:55.2427 | INFO | ATM Simulator started 
+2025-10-14 17:50:55.3337 | INFO | Users loaded successfully. 
+2025-10-14 17:51:03.5383 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:54:30.1394 | INFO | ATM Simulator started 
+2025-10-14 17:54:30.2313 | INFO | Users loaded successfully. 
+2025-10-14 17:55:17.0963 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:55:47.3620 | INFO | User data saved successfully. 
+2025-10-14 17:55:47.3620 | INFO | Deposited 1000 GEL to card 1234567890123456 
+2025-10-14 17:56:39.2146 | INFO | User 1234567890123456 logged in. 
+2025-10-14 18:02:56.9518 | INFO | ATM Simulator started 
+2025-10-14 18:02:57.0446 | INFO | Users loaded successfully. 
+2025-10-14 18:03:06.5472 | INFO | User 1234567890123456 logged in. 
+2025-10-14 18:03:23.8275 | INFO | User data saved successfully. 
+2025-10-14 18:03:23.8275 | INFO | Converted 1000 GEL to 310.00 USD for card 1234567890123456 
+2025-10-14 18:08:18.8195 | INFO | ATM Simulator started 
+2025-10-14 18:08:18.9008 | INFO | Users loaded successfully. 
+2025-10-14 18:08:31.1654 | INFO | User 1234567890123456 logged in. 
+2025-10-14 18:18:22.5727 | INFO | ATM Simulator started 
+2025-10-14 18:18:22.6558 | INFO | Users loaded successfully. 
+2025-10-14 18:18:41.1028 | WARN | Failed card authentication for card a 
+2025-10-14 18:18:48.2052 | WARN | Failed card authentication for card 1234567890123456 
+2025-10-14 18:18:59.4376 | WARN | Invalid PIN attempt for card 1234567890123456 
+2025-10-14 18:20:54.8895 | INFO | ATM Simulator started 
+2025-10-14 18:20:54.9871 | INFO | Users loaded successfully. 
+2025-10-14 18:21:21.8156 | WARN | Failed card authentication for card 1234567890123456 
+2025-10-14 18:21:36.9683 | WARN | Invalid PIN attempt for card 1234567890123456 
+2025-10-14 18:21:38.8918 | INFO | User with card 1234567890123456 successfully logged in. 
+2025-10-14 18:22:14.1525 | INFO | BANKOMATI Simulator started ;) 
+2025-10-14 18:22:14.2391 | INFO | Users loaded successfully. 
+2025-10-14 18:22:31.5518 | WARN | Failed card authentication for card 9876543210987654 
+2025-10-14 18:22:42.6589 | INFO | User with card 9876543210987654 successfully logged in. 
+2025-10-14 18:22:50.2958 | INFO | User data saved successfully. 
+2025-10-14 18:22:50.2958 | INFO | Deposited 200 USD to card 9876543210987654 
+2025-10-14 18:23:02.5899 | INFO | User data saved successfully. 
+2025-10-14 18:23:02.5899 | INFO | Withdrew 200 USD from card 9876543210987654 
+2025-10-14 18:23:24.5204 | INFO | User data saved successfully. 
+2025-10-14 18:23:24.5204 | INFO | User 9876543210987654 changed PIN successfully. 
+2025-10-14 18:23:36.1598 | INFO | User data saved successfully. 
+2025-10-14 18:23:36.1598 | INFO | Converted 500 GEL to 155.00 USD for card 9876543210987654 

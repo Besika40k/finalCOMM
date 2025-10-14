@@ -3,10 +3,10 @@
     "CardNumber": "1234567890123456",
     "CVC": "123",
     "ExpirationDate": "12/27",
-    "PIN": "4321",
+    "PIN": "1234",
     "Balance": {
       "GEL": 1200.50,
-      "USD": 300.00,
+      "USD": 610.00,
       "EUR": 150.00
     },
     "Transactions": [
@@ -27,6 +27,18 @@
         "Type": "Deposit",
         "Amount": 200,
         "Currency": "GEL"
+      },
+      {
+        "Date": "2025-10-14T17:55:47.350605+04:00",
+        "Type": "Deposit",
+        "Amount": 1000,
+        "Currency": "GEL"
+      },
+      {
+        "Date": "2025-10-14T18:03:23.8089477+04:00",
+        "Type": "Convert GEL \u2192 USD",
+        "Amount": 310.00,
+        "Currency": "USD"
       }
     ]
   },
@@ -34,10 +46,10 @@
     "CardNumber": "9876543210987654",
     "CVC": "456",
     "ExpirationDate": "06/26",
-    "PIN": "9876",
+    "PIN": "1234",
     "Balance": {
-      "GEL": 500.00,
-      "USD": 1200.00,
+      "GEL": 0.00,
+      "USD": 1355.00,
       "EUR": 300.00
     },
     "Transactions": [
@@ -52,6 +64,24 @@
         "Type": "Withdraw",
         "Amount": 100,
         "Currency": "EUR"
+      },
+      {
+        "Date": "2025-10-14T18:22:50.2750657+04:00",
+        "Type": "Deposit",
+        "Amount": 200,
+        "Currency": "USD"
+      },
+      {
+        "Date": "2025-10-14T18:23:02.5892125+04:00",
+        "Type": "Withdraw",
+        "Amount": 200,
+        "Currency": "USD"
+      },
+      {
+        "Date": "2025-10-14T18:23:36.1585487+04:00",
+        "Type": "Convert GEL --\u003E USD",
+        "Amount": 155.00,
+        "Currency": "USD"
       }
     ]
   }

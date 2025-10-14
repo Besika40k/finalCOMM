@@ -18,64 +18,33 @@ namespace finalCOMM
             try
             {
 
-                logger.Info("ATM Simulator started");
+                logger.Info("BANKOMATI Simulator started ;)");
 
-                Console.WriteLine("=== Welcome to the ATM Simulator ===");
+                Console.WriteLine("=== Welcome to the BANKOMATI Simulator ===");
 
                 // Path to JSON file
                 string jsonPath = "Database/users.json";
-
+                
                 // Initialize JSON helper and load users
                 var jsonActions = new JsonActions(jsonPath);
 
                 // Initialize account actions
                 var accountAction = new AccountAction(jsonActions);
-                
-                // Starting the logging
-                
+
+                // Initialize authentication with loaded users
+                var auth = new Authentication(jsonActions.Users);
+
                 while (true)
                 {
-                    Console.WriteLine("\nPlease insert your card (enter card number): ");
-                    string? cardNumber = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(cardNumber))
-                    {
-                        Console.WriteLine("Card number cannot be empty.");
-                        continue;
-                    }
-                    
-                    Console.WriteLine("\nPlease insert your CVC (last 3 digits): ");
-                    
-                    string? cvc = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(cvc))
-                    {
-                        Console.WriteLine("CVC number cannot be empty.");
-                        continue;
-                    }
-                    
-                    Console.WriteLine("\nPlease insert your cards Expiration Date (MM/DD): ");
-                    string? expDate = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(expDate))
-                    {
-                        Console.WriteLine("Card Expiration Date cannot be empty.");
-                        continue;
-                    }
-                    
-                    
-                    User? currentUser = AuthenticateUser(cardNumber, cvc, expDate, jsonActions);
+                    User? currentUser = auth.Authenticate();
 
                     if (currentUser != null)
                     {
-                        Console.WriteLine("✅ Login successful!");
-                        logger.Info($"User {cardNumber} logged in.");
                         ShowMenu(currentUser, accountAction);
                     }
                     else
                     {
-                        Console.WriteLine("❌ Invalid card information. Try again.");
-                        logger.Warn($"Failed login attempt with card {cardNumber}");
+                        Console.WriteLine("Authentication failed. Please try again.\n");
                     }
                 }
             }
@@ -104,8 +73,9 @@ namespace finalCOMM
                 Console.WriteLine("3. Withdraw Money");
                 Console.WriteLine("4. Show Last 5 Transactions");
                 Console.WriteLine("5. Change PIN");
-                Console.WriteLine("6. Logout");
-
+                Console.WriteLine("6. Change Amount");
+                Console.WriteLine("7. Logout");
+                
                 Console.Write("Enter choice: ");
                 string? choice = Console.ReadLine();
 
@@ -127,6 +97,9 @@ namespace finalCOMM
                         accountAction.ChangePIN(user);
                         break;
                     case "6":
+                        accountAction.ConvertData(user);
+                        break;
+                    case "7":
                         exit = true;
                         Console.WriteLine("Logging out...");
                         break;
