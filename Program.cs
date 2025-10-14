@@ -1,5 +1,4 @@
-﻿using System;
-using NLog;
+﻿using NLog;
 using finalCOMM.MainClasses;
 using finalCOMM.Actions;
 
@@ -8,9 +7,7 @@ namespace finalCOMM
     internal class Program
     {
         // NLog Logger
-        /*
-         * private static readonly Logger logger = LogManager.GetCurrentClassLogger();
-         */
+  
         private static readonly Logger logger = LogManager.Setup().LoadConfigurationFromFile("NLog.config").GetCurrentClassLogger();
 
         static void Main(string[] args)
