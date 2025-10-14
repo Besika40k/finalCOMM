@@ -13,7 +13,9 @@ namespace finalCOMM.Actions
 
         public JsonActions(string filePath)
         {
-            _filePath = filePath;
+            string projectRoot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..");
+            _filePath = Path.Combine(projectRoot, "Database", "users.json");
+            _filePath = Path.GetFullPath(_filePath);
             Users = LoadUsers();
         }
 

@@ -43,8 +43,28 @@ namespace finalCOMM
                         Console.WriteLine("Card number cannot be empty.");
                         continue;
                     }
+                    
+                    Console.WriteLine("\nPlease insert your CVC (last 3 digits): ");
+                    
+                    string? cvc = Console.ReadLine();
 
-                    User? currentUser = AuthenticateUser(cardNumber, jsonActions);
+                    if (string.IsNullOrWhiteSpace(cvc))
+                    {
+                        Console.WriteLine("CVC number cannot be empty.");
+                        continue;
+                    }
+                    
+                    Console.WriteLine("\nPlease insert your cards Expiration Date (MM/DD): ");
+                    string? expDate = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(expDate))
+                    {
+                        Console.WriteLine("Card Expiration Date cannot be empty.");
+                        continue;
+                    }
+                    
+                    
+                    User? currentUser = AuthenticateUser(cardNumber, cvc, expDate, jsonActions);
 
                     if (currentUser != null)
                     {
@@ -54,7 +74,7 @@ namespace finalCOMM
                     }
                     else
                     {
-                        Console.WriteLine("❌ Invalid card number. Try again.");
+                        Console.WriteLine("❌ Invalid card information. Try again.");
                         logger.Warn($"Failed login attempt with card {cardNumber}");
                     }
                 }
@@ -66,10 +86,10 @@ namespace finalCOMM
             }
         }
 
-        private static User? AuthenticateUser(string cardNumber, JsonActions jsonActions)
+        private static User? AuthenticateUser(string cardNumber, string cvc, string expDate,JsonActions jsonActions)
         {
             // Look for a user with the given card number
-            return jsonActions.Users.Find(u => u.CardNumber == cardNumber);
+            return jsonActions.Users.Find(u => u.CardNumber == cardNumber && u.CVC == cvc &&  u.ExpirationDate == expDate);
         }
 
         private static void ShowMenu(User user, AccountAction accountAction)

@@ -12,3 +12,26 @@
 2025-10-14 16:54:34.6739 | INFO | Users loaded successfully. 
 2025-10-14 16:54:37.6291 | WARN | Failed login attempt with card 1234567890123456\ 
 2025-10-14 16:54:39.3308 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:01:23.7334 | INFO | ATM Simulator started 
+2025-10-14 17:01:23.8152 | INFO | Users loaded successfully. 
+2025-10-14 17:01:28.1352 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:07:06.2925 | INFO | ATM Simulator started 
+2025-10-14 17:07:06.3904 | INFO | Users loaded successfully. 
+2025-10-14 17:07:14.8587 | WARN | Failed login attempt with card 2 
+2025-10-14 17:07:22.1746 | WARN | Failed login attempt with card 1234567890123456 
+2025-10-14 17:07:36.4738 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:07:43.2322 | WARN | Failed login attempt with card 1234567890123456 
+2025-10-14 17:08:20.5689 | INFO | ATM Simulator started 
+2025-10-14 17:08:20.6554 | INFO | Users loaded successfully. 
+2025-10-14 17:08:30.1997 | WARN | Failed login attempt with card 1234567890123456 
+2025-10-14 17:08:43.5059 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:13:45.3771 | INFO | ATM Simulator started 
+2025-10-14 17:13:45.4791 | INFO | Users loaded successfully. 
+2025-10-14 17:13:53.0484 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:13:59.4198 | INFO | User data saved successfully. 
+2025-10-14 17:13:59.4198 | INFO | Deposited 200 GEL to card 1234567890123456 
+2025-10-14 17:22:05.1145 | INFO | ATM Simulator started 
+2025-10-14 17:22:05.2025 | INFO | Users loaded successfully. 
+2025-10-14 17:22:14.0024 | INFO | User 1234567890123456 logged in. 
+2025-10-14 17:22:28.5021 | INFO | User data saved successfully. 
+2025-10-14 17:22:28.5021 | INFO | Deposited 200 GEL to card 1234567890123456 

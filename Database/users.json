@@ -1,11 +1,11 @@
-﻿[
+[
   {
     "CardNumber": "1234567890123456",
     "CVC": "123",
     "ExpirationDate": "12/27",
     "PIN": "4321",
     "Balance": {
-      "GEL": 1000.50,
+      "GEL": 1200.50,
       "USD": 300.00,
       "EUR": 150.00
     },
@@ -20,6 +20,12 @@
         "Date": "2025-10-12T11:30:00",
         "Type": "Withdraw",
         "Amount": 50,
+        "Currency": "GEL"
+      },
+      {
+        "Date": "2025-10-14T17:22:28.4884677+04:00",
+        "Type": "Deposit",
+        "Amount": 200,
         "Currency": "GEL"
       }
     ]
